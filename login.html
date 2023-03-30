@@ -22,6 +22,18 @@ body {
   color:#C0392B;/*TALL POPPY*/
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  margin: 0 auto;
+  width: 300px;
+}
+
 </style>
 
 </head>
@@ -30,23 +42,27 @@ body {
         function checkLogin() {
           var username = document.getElementById("username").value;
           var password = document.getElementById("password").value;
-        
+
           if (username === "rucha" && password === "20102021") {
             window.location.href = "home.html";
           } else {
             alert("Invalid username or password.");
           }
+
+          return false;
         }
+
         </script>
   <div class="container">
     <form>
+      <h3>Enter username & password</h3>
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required>
       <br/>
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
       <br>
-      <button type="submit" onclick="checkLogin()">Login</button>
+      <button type="submit" onclick="return checkLogin()">Login</button>
     </form>
   </div>
         
